@@ -1,0 +1,94 @@
+sudo du -sh /var/log
+[sudo] password for rv: 
+
+13M	/var/log
+
+====================================================================
+df -h
+--------
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   17G  5.8G   12G  34% /
+devtmpfs             1.9G     0  1.9G   0% /dev
+tmpfs                2.0G   84K  2.0G   1% /dev/shm
+tmpfs                782M  9.8M  772M   2% /run
+tmpfs                1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+/dev/sda2            960M  423M  538M  44% /boot
+tmpfs                391M  152K  391M   1% /run/user/1000
+/dev/sr0             8.6G  8.6G     0 100% /run/media/rv/CentOS-Stream-10-BaseOS-x86_64
+
+==================================================================
+
+less /var/log messages
+----------------------
+total 3896
+drwxr-xr-x. 14 root    root       4096 Jan 15 08:06 ./
+drwxr-xr-x. 20 root    root       4096 Dec 25 05:09 ../
+drwxr-xr-x.  2 root    root       4096 Dec 25 05:08 anaconda/
+drwx------.  2 root    root         23 Dec 25 05:09 audit/
+-rw-------.  1 root    root          0 Jan 15 08:06 boot.log
+-rw-------.  1 root    root     140593 Jan 12 09:23 boot.log-20260112
+-rw-------.  1 root    root      55460 Jan 13 09:39 boot.log-20260113
+-rw-------.  1 root    root      83380 Jan 15 08:06 boot.log-20260115
+-rw-rw----.  1 root    utmp          0 Dec 25 05:02 btmp
+drwxr-x---.  2 chrony  chrony        6 Nov 19 19:00 chrony/
+-rw-------.  1 root    root        668 Jan 15 09:08 cron
+-rw-------.  1 root    root       9963 Jan 15 08:01 cron-20260115
+drwxr-xr-x.  2 root    lp            6 Nov 17 19:00 cups/
+-rw-r--r--.  1 root    root      32603 Jan 15 08:22 dnf.librepo.log
+-rw-r--r--.  1 root    root      98673 Jan 15 08:22 dnf.log
+-rw-r--r--.  1 root    root       7198 Jan 15 08:21 dnf.rpm.log
+-rw-r-----.  1 root    root         55 Jan  8 09:13 firewalld
+:
+
+====================================================================
+whoami
+-------
+rv
+
+===================================================================
+hostname
+---------
+localhost.localdomain
+
+====================================================================
+
+id
+-----
+uid=1000(rv) gid=1000(rv) groups=1000(rv),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+=====================================================================
+
+ps
+-----
+    PID TTY          TIME CMD
+  35460 pts/0    00:00:00 bash
+  41009 pts/0    00:00:00 ps
+
+=====================================================================
+free -h
+---------
+
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       2.3Gi       576Mi        18Mi       1.3Gi       1.5Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+===================================================================
+
+ping google.com
+-----------------
+
+PING google.com (142.250.70.110) 56(84) bytes of data.
+64 bytes from google.com (142.250.70.110): icmp_seq=1 ttl=128 time=25.6 ms
+64 bytes from google.com (142.250.70.110): icmp_seq=2 ttl=128 time=32.0 ms
+64 bytes from google.com (142.250.70.110): icmp_seq=3 ttl=128 time=29.1 ms
+64 bytes from google.com (142.250.70.110): icmp_seq=4 ttl=128 time=30.2 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3007ms
+rtt min/avg/max/mdev = 25.610/29.227/31.975/2.329 ms
+
+===================================================================
+
+
+
+
